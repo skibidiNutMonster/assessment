@@ -1,9 +1,9 @@
 import random
 
-
 # welcome the user
 print('⚠️⚠️⚠️welcome to⚠️⚠️⚠️')
 print('🌚freaky maths games🌚')
+
 
 def yes_no(question):
     while True:
@@ -16,12 +16,14 @@ def yes_no(question):
         else:
             print('please enter yes / no')
 
+
 # instructions for game
 def instructions():
     print('''------in this 𝓕𝓻𝓮𝓪𝓴𝔂 math game you will be asked-------
   what game mode you want to use, how many questions 
  you want and you will be forced! to answer the given 
 questions or else you will be punished by 𝓕𝓻𝓮𝓪𝓴𝔂 𝓑𝓸𝓫 👅''')
+
 
 # Asks the user if they would like to see the instructions
 want_instruction = yes_no('do you need instructions(I would recomend) ')
@@ -35,21 +37,24 @@ ans: str = 'yes'
 
 # asking if they understand
 print('     ------do you understand the rules?------')
-str=input('                     ')
+str = input('                     ')
 if str == 'yes':
 
-# if they understand print this
+    # if they understand print this
     print('''
 [easy], 
 [normal], 
 [𝓕𝓻𝓮𝓪𝓴𝔂]''')
+    
+    
 else:
     print('Do you feel his presence')
     exit()
 
+
 # checking for a gamemode
 def question_difficulty(difficulty):
-    diff =input(difficulty).lower()
+    diff = input(difficulty).lower()
 
     if diff == 'easy' or diff == 'e':
         return "easy"
@@ -59,6 +64,21 @@ def question_difficulty(difficulty):
         return "𝓕𝓻𝓮𝓪𝓴𝔂"
     else:
         print('please enter selected options ')
+
+# asks them to select a gamemode
+select_gameMode = question_difficulty('''select game mode
+        ''')
+
+# if they selected one of these game modes then start that game mode
+if select_gameMode == 'easy':
+    easy_modeStart()
+
+if select_gameMode == 'normal':
+    normal_modeStart()
+
+if select_gameMode == '𝓕𝓻𝓮𝓪𝓴𝔂':
+    freaky_modeStart()
+
 
 # if freaky mode is selected do this
 def freaky_modeStart():
@@ -115,7 +135,7 @@ def freaky_modeStart():
                     print(f"Incorrect. The correct answer is {correct_answer}.")
             except ValueError:
                 print("Invalid input. Please enter a number.")
-        print(f"You got {score} out of {num_questions} correct. {score/num_questions*100}%")
+        print(f"You got {score} out of {num_questions} correct. {score / num_questions * 100}%")
         # Check if the percentage is over 80%
         if score / num_questions * 100 >= 80:
             print('since you did a good job, wanna get 𝓕𝓻𝓮𝓪𝓴𝔂 with bob')
@@ -179,17 +199,16 @@ def normal_modeStart():
                     print(f"Incorrect. The correct answer is {correct_answer}.")
             except ValueError:
                 print("Invalid input. Please enter a number.")
-        print(f"You got {score} out of {num_questions} correct. {score/num_questions*100}%")
+        print(f"You got {score} out of {num_questions} correct. {score / num_questions * 100}%")
         # Check if the percentage is over 80%
         if score / num_questions * 100 >= 80:
             print("nice job, bob?.")
         else:
             print('Get better lol')
-        
 
         # number of questions
-    quiz(result)
 
+    quiz(result)
 
 
 # if easy mode is selected do this
@@ -202,7 +221,6 @@ def easy_modeStart():
 ░░╚██╔╝░╚██╔╝░███████╗███████╗╚█████╔╝╚█████╔╝██║░╚═╝░██║███████╗
 ░░░╚═╝░░░╚═╝░░╚══════╝╚══════╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝
 -------------------you have selected easy mode-------------------''')
-
 
     def input_to_number():
         user_input = input("How many questions: ")
@@ -247,26 +265,11 @@ def easy_modeStart():
                     print(f"Incorrect. The correct answer is {correct_answer}.")
             except ValueError:
                 print("Invalid input. Please enter a number.")
-        print(f"You got {score} out of {num_questions} correct. {score/num_questions*100}%")
+        print(f"You got {score} out of {num_questions} correct. {score / num_questions * 100}%")
         # Check if the percentage is over 80%
-        if score/num_questions*100 >= 80:
+        if score / num_questions * 100 >= 80:
             print("gg you won.")
         else:
             print('Get better lol')
 
             quiz(result)
-
-        # asks them to select a gamemode
-        select_gameMode = question_difficulty('''select game mode
-        ''')
-
-        # if they selected one of these game modes then start that game mode
-        if select_gameMode == 'easy':
-            easy_modeStart()
-
-        if select_gameMode == 'normal':
-            normal_modeStart()
-
-        if select_gameMode == '𝓕𝓻𝓮𝓪𝓴𝔂':
-            freaky_modeStart()
-
