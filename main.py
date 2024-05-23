@@ -84,7 +84,7 @@ def freaky_modeStart():
 
     result = input_to_number()
     if result is not None:
-        print(result)
+        print('here is', result, 'questions')
 
     def generate_question():
         # generate a math question
@@ -116,7 +116,11 @@ def freaky_modeStart():
             except ValueError:
                 print("Invalid input. Please enter a number.")
         print(f"You got {score} out of {num_questions} correct. {score/num_questions*100}%")
-        print('since you did a good job, wanna get 𝓕𝓻𝓮𝓪𝓴𝔂 with bob')
+        # Check if the percentage is over 80%
+        if score / num_questions * 100 >= 80:
+            print('since you did a good job, wanna get 𝓕𝓻𝓮𝓪𝓴𝔂 with bob')
+        else:
+            print('Get better lol')
 
     # number of questions
     quiz(result)
@@ -144,7 +148,7 @@ def normal_modeStart():
 
     result = input_to_number()
     if result is not None:
-        print(result)
+        print('here is', result, 'questions')
 
     def generate_question():
         # generate a math question
@@ -176,6 +180,11 @@ def normal_modeStart():
             except ValueError:
                 print("Invalid input. Please enter a number.")
         print(f"You got {score} out of {num_questions} correct. {score/num_questions*100}%")
+        # Check if the percentage is over 80%
+        if score / num_questions * 100 >= 80:
+            print("nice job, bob?.")
+        else:
+            print('Get better lol')
         
 
         # number of questions
@@ -206,7 +215,7 @@ def easy_modeStart():
 
     result = input_to_number()
     if result is not None:
-        print(result)
+        print('here is', result, 'questions')
 
     def generate_question():
 
@@ -239,24 +248,25 @@ def easy_modeStart():
             except ValueError:
                 print("Invalid input. Please enter a number.")
         print(f"You got {score} out of {num_questions} correct. {score/num_questions*100}%")
-        print('gg you won.')
+        # Check if the percentage is over 80%
+        if score/num_questions*100 >= 80:
+            print("gg you won.")
+        else:
+            print('Get better lol')
 
-        # number of questions
+            quiz(result)
 
-    quiz(result)
+        # asks them to select a gamemode
+        select_gameMode = question_difficulty('''select game mode
+        ''')
 
+        # if they selected one of these game modes then start that game mode
+        if select_gameMode == 'easy':
+            easy_modeStart()
 
-# asks them to select a gamemode
-select_gameMode = question_difficulty('''select game mode
-''')
+        if select_gameMode == 'normal':
+            normal_modeStart()
 
-# if they selected one of these game modes then start that game mode
-if select_gameMode == 'easy':
-    easy_modeStart()
-
-if select_gameMode == 'normal':
-    normal_modeStart()
-
-if select_gameMode == '𝓕𝓻𝓮𝓪𝓴𝔂':
-    freaky_modeStart()
+        if select_gameMode == '𝓕𝓻𝓮𝓪𝓴𝔂':
+            freaky_modeStart()
 
