@@ -84,6 +84,8 @@ def freaky_modeStart():
 ▕┈╰▏╰╯╰━━━━╯┈┈▏------------------you have 𝓕𝓻𝓮𝓪𝓴𝔂 mode selected------------------▕┈╰▏╰╯╰━━━━╯┈┈▏
                ''')
 
+    game_history = []
+
     def input_to_number():
         user_input = input("How many questions: ")
         try:
@@ -122,16 +124,22 @@ def freaky_modeStart():
                 if user_answer == correct_answer:
                     print("Correct!")
                     score += 1
+                    game_history.append((question, user_answer, "Correct"))
                 else:
                     print(f"Incorrect. The correct answer is {correct_answer}.")
+                    game_history.append((question, user_answer, "Incorrect"))
             except ValueError:
                 print("Invalid input. Please enter a number.")
         print(f"You got {score} out of {num_questions} correct. {score / num_questions * 100}%")
         # Check if the percentage is over 80%
         if score / num_questions * 100 >= 80:
-            print('since you did a good job, wanna get 𝓕𝓻𝓮𝓪𝓴𝔂 with bob')
+            print("since you did a good job, wanna get 𝓕𝓻𝓮𝓪𝓴𝔂 with bob")
         else:
             print('Get better lol')
+
+        if input("Do you want to see game history? (yes/no): ").lower() == "yes":
+            for i, (question, user_answer, result) in enumerate(game_history, start=1):
+                print(f"Question {i}: {question} Your answer: {user_answer}, Result: {result}")
 
         play_again = input("Do you want to play again? (yes/no): ")
         if play_again.lower() == "yes":
@@ -139,7 +147,8 @@ def freaky_modeStart():
         else:
             print("Thank you for playing!")
 
-    # number of questions
+        # number of questions
+
     quiz(result)
 
 
@@ -154,6 +163,8 @@ def normal_modeStart():
 ░░░╚═╝░░░╚═╝░░╚══════╝╚══════╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝
 ------------------you have selected normal mode------------------''')
 
+    game_history = []
+
     def input_to_number():
         user_input = input("How many questions: ")
         try:
@@ -192,8 +203,10 @@ def normal_modeStart():
                 if user_answer == correct_answer:
                     print("Correct!")
                     score += 1
+                    game_history.append((question, user_answer, "Correct"))
                 else:
                     print(f"Incorrect. The correct answer is {correct_answer}.")
+                    game_history.append((question, user_answer, "Incorrect"))
             except ValueError:
                 print("Invalid input. Please enter a number.")
         print(f"You got {score} out of {num_questions} correct. {score / num_questions * 100}%")
@@ -202,6 +215,10 @@ def normal_modeStart():
             print("nice job, bob?.")
         else:
             print('Get better lol')
+
+        if input("Do you want to see game history? (yes/no): ").lower() == "yes":
+            for i, (question, user_answer, result) in enumerate(game_history, start=1):
+                print(f"Question {i}: {question} Your answer: {user_answer}, Result: {result}")
 
         play_again = input("Do you want to play again? (yes/no): ")
         if play_again.lower() == "yes":
@@ -224,6 +241,9 @@ def easy_modeStart():
 ░░╚██╔╝░╚██╔╝░███████╗███████╗╚█████╔╝╚█████╔╝██║░╚═╝░██║███████╗
 ░░░╚═╝░░░╚═╝░░╚══════╝╚══════╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝
 -------------------you have selected easy mode-------------------''')
+
+    game_history = []
+
     def input_to_number():
         user_input = input("How many questions: ")
         try:
@@ -262,8 +282,10 @@ def easy_modeStart():
                 if user_answer == correct_answer:
                     print("Correct!")
                     score += 1
+                    game_history.append((question, user_answer, "Correct"))
                 else:
                     print(f"Incorrect. The correct answer is {correct_answer}.")
+                    game_history.append((question, user_answer, "Incorrect"))
             except ValueError:
                 print("Invalid input. Please enter a number.")
         print(f"You got {score} out of {num_questions} correct. {score / num_questions * 100}%")
@@ -272,6 +294,10 @@ def easy_modeStart():
             print("good game.")
         else:
             print('Get better lol')
+
+        if input("Do you want to see game history? (yes/no): ").lower() == "yes":
+            for i, (question, user_answer, result) in enumerate(game_history, start=1):
+                print(f"Question {i}: {question} Your answer: {user_answer}, Result: {result}")
 
         play_again = input("Do you want to play again? (yes/no): ")
         if play_again.lower() == "yes":
