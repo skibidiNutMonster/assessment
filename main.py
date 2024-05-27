@@ -86,6 +86,7 @@ def freaky_modeStart():
 
     game_history = []
 
+    # gets the users input into int for quiz number
     def input_to_number():
         user_input = input("How many questions: ")
         try:
@@ -137,10 +138,12 @@ def freaky_modeStart():
         else:
             print('Get better lol')
 
+        # asks if they want to see their game history
         if input("Do you want to see game history? (yes/no): ").lower() == "yes":
             for i, (question, user_answer, result) in enumerate(game_history, start=1):
                 print(f"Question {i}: {question} Your answer: {user_answer}, Result: {result}")
 
+        # asks if they want to play again if they say yes then play again
         play_again = input("Do you want to play again? (yes/no): ")
         if play_again.lower() == "yes":
             freaky_modeStart()
@@ -165,6 +168,7 @@ def normal_modeStart():
 
     game_history = []
 
+    # gets the users input into int for quiz number
     def input_to_number():
         user_input = input("How many questions: ")
         try:
@@ -216,10 +220,12 @@ def normal_modeStart():
         else:
             print('Get better lol')
 
+        # asks if they want to see their game history
         if input("Do you want to see game history? (yes/no): ").lower() == "yes":
             for i, (question, user_answer, result) in enumerate(game_history, start=1):
                 print(f"Question {i}: {question} Your answer: {user_answer}, Result: {result}")
 
+        # asks if they want to play again if they say yes then play again
         play_again = input("Do you want to play again? (yes/no): ")
         if play_again.lower() == "yes":
             normal_modeStart()
@@ -244,6 +250,7 @@ def easy_modeStart():
 
     game_history = []
 
+    # gets the users input into int for quiz number
     def input_to_number():
         user_input = input("How many questions: ")
         try:
@@ -295,10 +302,12 @@ def easy_modeStart():
         else:
             print('Get better lol')
 
+        # asks if they want to see their game history
         if input("Do you want to see game history? (yes/no): ").lower() == "yes":
             for i, (question, user_answer, result) in enumerate(game_history, start=1):
                 print(f"Question {i}: {question} Your answer: {user_answer}, Result: {result}")
 
+        # asks if they want to play again if they say yes then play again
         play_again = input("Do you want to play again? (yes/no): ")
         if play_again.lower() == "yes":
             easy_modeStart()
