@@ -133,6 +133,12 @@ def freaky_modeStart():
         else:
             print('Get better lol')
 
+        play_again = input("Do you want to play again? (yes/no): ")
+        if play_again.lower() == "yes":
+            freaky_modeStart()
+        else:
+            print("Thank you for playing!")
+
     # number of questions
     quiz(result)
 
@@ -197,6 +203,12 @@ def normal_modeStart():
         else:
             print('Get better lol')
 
+        play_again = input("Do you want to play again? (yes/no): ")
+        if play_again.lower() == "yes":
+            normal_modeStart()
+        else:
+            print("Thank you for playing!")
+
         # number of questions
 
     quiz(result)
@@ -260,6 +272,12 @@ def easy_modeStart():
             print("good game.")
         else:
             print('Get better lol')
+
+        play_again = input("Do you want to play again? (yes/no): ")
+        if play_again.lower() == "yes":
+            easy_modeStart()
+        else:
+            print("Thank you for playing!")
 
         # number of questions
 
