@@ -2,7 +2,7 @@ import random
 
 # welcome the user
 print('⚠️⚠️⚠️welcome to⚠️⚠️⚠️')
-print('🌚freaky maths games🌚')
+print('🌚𝓕𝓻𝓮𝓪𝓴𝔂 maths games🌚')
 
 
 def yes_no(question):
