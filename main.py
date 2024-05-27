@@ -45,8 +45,8 @@ if str == 'yes':
 [easy], 
 [normal], 
 [𝓕𝓻𝓮𝓪𝓴𝔂]''')
-    
-    
+
+
 else:
     print('Do you feel his presence')
     exit()
@@ -65,19 +65,10 @@ def question_difficulty(difficulty):
     else:
         print('please enter selected options ')
 
+
 # asks them to select a gamemode
 select_gameMode = question_difficulty('''select game mode
-        ''')
-
-# if they selected one of these game modes then start that game mode
-if select_gameMode == 'easy':
-    easy_modeStart()
-
-if select_gameMode == 'normal':
-    normal_modeStart()
-
-if select_gameMode == '𝓕𝓻𝓮𝓪𝓴𝔂':
-    freaky_modeStart()
+''')
 
 
 # if freaky mode is selected do this
@@ -221,7 +212,6 @@ def easy_modeStart():
 ░░╚██╔╝░╚██╔╝░███████╗███████╗╚█████╔╝╚█████╔╝██║░╚═╝░██║███████╗
 ░░░╚═╝░░░╚═╝░░╚══════╝╚══════╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝
 -------------------you have selected easy mode-------------------''')
-
     def input_to_number():
         user_input = input("How many questions: ")
         try:
@@ -236,7 +226,6 @@ def easy_modeStart():
         print('here is', result, 'questions')
 
     def generate_question():
-
         # generate a math question
         num1 = random.randint(1, 10)
         num2 = random.randint(1, 10)
@@ -268,8 +257,21 @@ def easy_modeStart():
         print(f"You got {score} out of {num_questions} correct. {score / num_questions * 100}%")
         # Check if the percentage is over 80%
         if score / num_questions * 100 >= 80:
-            print("gg you won.")
+            print("good game.")
         else:
             print('Get better lol')
 
-            quiz(result)
+        # number of questions
+
+    quiz(result)
+
+
+# if they selected one of these game modes then start that game mode
+if select_gameMode == 'easy':
+    easy_modeStart()
+
+if select_gameMode == 'normal':
+    normal_modeStart()
+
+if select_gameMode == '𝓕𝓻𝓮𝓪𝓴𝔂':
+    freaky_modeStart()
